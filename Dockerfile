@@ -3,7 +3,8 @@ FROM golang:1.10-alpine as builder
 
 RUN apk add --no-cache make gcc git musl-dev linux-headers
 
-RUN git clone https://github.com/EthereumCommonwealth/go-callisto && \
+RUN cd / && \ 
+    git clone https://github.com/EthereumCommonwealth/go-callisto && \
     cd go-callisto && \
     git pull && \
     git checkout refs/heads/CLO/1.0 && \
