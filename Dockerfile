@@ -5,10 +5,9 @@ RUN apk add --no-cache make gcc git musl-dev linux-headers
 
 RUN git clone https://github.com/EthereumCommonwealth/go-callisto && \
     cd go-callisto && \
-    git pull&& \
-    git checkout refs/heads/CLO/1.0
-
-RUN make geth
+    git pull && \
+    git checkout refs/heads/CLO/1.0 && \
+    make geth
 
 # Pull Geth into a second stage deploy alpine container
 FROM alpine:latest
